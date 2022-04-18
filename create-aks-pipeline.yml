@@ -15,7 +15,7 @@ steps:
 - task: TerraformCLI@0
   inputs:
     command: 'init'
-    workingDirectory: '$(System.DefaultWorkingDirectory)/aks-terraform'
+    workingDirectory: '$(System.DefaultWorkingDirectory)/infrastructure/aks-terraform'
     # commandOptions: '-var client_id=$(client_id) -var client_secret=$(client_secret) -var ssh_public_key=$(publickey.secureFilePath)'
     backendType: 'azurerm'
     backendServiceArm: 'azure-resource-manager-service-connection'
@@ -29,12 +29,12 @@ steps:
 - task: TerraformCLI@0
   inputs:
     command: 'apply'
-    workingDirectory: '$(System.DefaultWorkingDirectory)/aks-terraform'
+    workingDirectory: '$(System.DefaultWorkingDirectory)/infrastructure/aks-terraform'
     environmentServiceName: 'azure-resource-manager-service-connection'
     commandOptions: '-var client_id=$(client_id) -var client_secret=$(client_secret) -var ssh_public_key=$(publickey.secureFilePath)'
 
 - task: TerraformCLI@0
   inputs:
     command: 'destroy'
-    workingDirectory: '$(System.DefaultWorkingDirectory)/aks-terraform'
+    workingDirectory: '$(System.DefaultWorkingDirectory)/infrastructure/aks-terraform'
     environmentServiceName: 'azure-resource-manager-service-connection'
