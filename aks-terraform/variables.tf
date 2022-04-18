@@ -1,3 +1,6 @@
+variable appId {}
+variable password {}
+variable ssh_public_key {}
 variable "resource_group_name" {
   description = "Azure Resource Group name"
 }
