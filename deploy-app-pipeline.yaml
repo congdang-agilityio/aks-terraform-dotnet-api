@@ -32,7 +32,7 @@ stages:
     - task: CopyFiles@2
       inputs:
         SourceFolder: '$(System.DefaultWorkingDirectory)/deployment'
-        Contents: '**/*.yaml'
+        Contents: '**/*.yml'
         TargetFolder: '$(Build.ArtifactStagingDirectory)/deployment'
     - task: PublishBuildArtifacts@1
       inputs:
@@ -62,5 +62,5 @@ stages:
         action: 'deploy'
         kubernetesServiceConnection: 'azure-kubernetes-connection'
         namespace: 'default'
-        manifests: '$(System.ArtifactsDirectory)/deployment/api.yaml'
+        manifests: '$(System.ArtifactsDirectory)/deployment/api.yml'
         containers: 'congdang/bookstoreapi:$(tag)'
