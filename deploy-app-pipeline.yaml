@@ -14,31 +14,31 @@ stages:
 # Build Docker Image
 # Publish the K8S Files
 
-# - stage: Build
-#   displayName: Build image
-#   jobs:  
-#   - job: Build
-#     displayName: Build
-#     pool:
-#       vmImage: 'ubuntu-latest'
-#     steps:
-#     - task: Docker@2
-#       inputs:
-#         containerRegistry: 'congdang-docker-hub'
-#         repository: 'congdang/bookstoreapi'
-#         command: 'buildAndPush'
-#         Dockerfile: '**/Dockerfile'
-#         tags: '$(tag)'
-#     - task: CopyFiles@2
-#       inputs:
-#         SourceFolder: '$(System.DefaultWorkingDirectory)/deployment'
-#         Contents: '**/*.yml'
-#         TargetFolder: '$(Build.ArtifactStagingDirectory)/deployment'
-#     - task: PublishBuildArtifacts@1
-#       inputs:
-#         PathtoPublish: '$(Build.ArtifactStagingDirectory)'
-#         ArtifactName: 'manifests'
-#         publishLocation: 'Container'
+- stage: Build
+  displayName: Build image
+  jobs:  
+  - job: Build
+    displayName: Build
+    pool:
+      vmImage: 'ubuntu-latest'
+    steps:
+    # - task: Docker@2
+    #   inputs:
+    #     containerRegistry: 'congdang-docker-hub'
+    #     repository: 'congdang/bookstoreapi'
+    #     command: 'buildAndPush'
+    #     Dockerfile: '**/Dockerfile'
+    #     tags: '$(tag)'
+    - task: CopyFiles@2
+      inputs:
+        SourceFolder: '$(System.DefaultWorkingDirectory)/deployment'
+        Contents: '**/*.yml'
+        TargetFolder: '$(Build.ArtifactStagingDirectory)/deployment'
+    - task: PublishBuildArtifacts@1
+      inputs:
+        PathtoPublish: '$(Build.ArtifactStagingDirectory)'
+        ArtifactName: 'manifests'
+        publishLocation: 'Container'
 
 # Stage 2
 # Download the K8S Files
