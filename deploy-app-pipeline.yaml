@@ -31,14 +31,18 @@ stages:
         tags: '$(tag)'
     - task: CopyFiles@2
       inputs:
-        SourceFolder: '$(System.DefaultWorkingDirectory)'
+        SourceFolder: '$(System.DefaultWorkingDirectory)/deployment'
         Contents: '**/*.yaml'
-        TargetFolder: '$(Build.ArtifactStagingDirectory)'
+        TargetFolder: '$(Build.ArtifactStagingDirectory)/deployment'
     - task: PublishBuildArtifacts@1
       inputs:
-        PathtoPublish: '$(Build.ArtifactStagingDirectory)'
+        PathtoPublish: '$(Build.ArtifactStagingDirectory)/deployment'
         ArtifactName: 'manifests'
         publishLocation: 'Container'
+
+# Stage 2
+# Download the K8S Files
+# Deploy to K8S Cluster with Docker Image
 - stage: Deploy
   displayName: Deploy image
   jobs:  
@@ -60,6 +64,3 @@ stages:
         namespace: 'default'
         manifests: '$(System.ArtifactsDirectory)/deployment/api.yaml'
         containers: 'congdang/bookstoreapi:$(tag)'
-# Stage 2
-# Download the K8S Files
-# Deploy to K8S Cluster with Docker Image
