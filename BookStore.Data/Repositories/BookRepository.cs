@@ -14,7 +14,8 @@ namespace BookStore.Data.Repositories
         {
             new Book {Id = 1, Title = "The Girl on the Train", Author = "Hawkins, Paula", PublicationYear = 2002, IsAvailable = true, CallNumber = "229292" },
             new Book {Id = 2, Title = "The Martian", Author = "Weir, Andy", PublicationYear = 2012, IsAvailable = true, CallNumber = "229192" },
-            new Book {Id = 2, Title = "The True Love", Author = "Cong, Dang", PublicationYear = 2012, IsAvailable = true, CallNumber = "229192" },
+            new Book {Id = 3, Title = "The True Love", Author = "Cong, Dang", PublicationYear = 2012, IsAvailable = true, CallNumber = "229192" },
+            new Book {Id = 4, Title = "Life can't wait", Author = "No, Name", PublicationYear = 2002, IsAvailable = true, CallNumber = "2222192" },
         };
         public List<Book> GetAllBooks()
         {
