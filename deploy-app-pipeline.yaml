@@ -36,7 +36,7 @@ stages:
         TargetFolder: '$(Build.ArtifactStagingDirectory)/deployment'
     - task: PublishBuildArtifacts@1
       inputs:
-        PathtoPublish: '$(Build.ArtifactStagingDirectory)/deployment'
+        PathtoPublish: '$(Build.ArtifactStagingDirectory)'
         ArtifactName: 'manifests'
         publishLocation: 'Container'
 
