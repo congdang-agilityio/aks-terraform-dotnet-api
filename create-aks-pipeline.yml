@@ -23,7 +23,7 @@ steps:
     backendAzureRmResourceGroupName: 'terraform-backend-rg'
     backendAzureRmResourceGroupLocation: 'eastasia'
     backendAzureRmStorageAccountName: 'storageacctcongdang'
-    backendAzureRmContainerName: 'storageacctrangacontainer'
+    backendAzureRmContainerName: 'storageacctcongdangcontainer'
     backendAzureRmKey: 'kubernetes-dev.tfstate'
 
 - task: TerraformCLI@0
