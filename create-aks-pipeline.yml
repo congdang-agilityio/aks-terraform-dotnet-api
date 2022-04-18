@@ -31,7 +31,7 @@ steps:
     command: 'apply'
     workingDirectory: '$(System.DefaultWorkingDirectory)/aks-terraform'
     environmentServiceName: 'azure-resource-manager-service-connection'
-    commandOptions: '-var client_id=$(client_id) -var client_secret=$(client_secret) -var ssh_public_key=$(publickey.secureFilePath)'
+    commandOptions: '-var client_id=$(appId) -var client_secret=$(password) -var ssh_public_key=$(publickey.secureFilePath)'
 
 - task: TerraformCLI@0
   inputs:
