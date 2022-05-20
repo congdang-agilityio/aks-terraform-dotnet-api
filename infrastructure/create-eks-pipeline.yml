@@ -15,15 +15,15 @@ steps:
     backendServiceAWS: 'aws-for-terraform'
     backendAWSBucketName: 'terraform-backend-state-congdang-123'
     backendAWSKey: 'kubernetes-dev.tfstate'
-- task: TerraformTaskV1@0
-  inputs:
-    provider: 'aws'
-    command: 'apply'
-    workingDirectory: '$(System.DefaultWorkingDirectory)/infrastructure/eks-terraform'
-    environmentServiceNameAWS: 'aws-for-terraform'
-- task: TerraformTaskV1@0
-  inputs:
-    provider: 'aws'
-    command: 'destroy'
-    workingDirectory: '$(System.DefaultWorkingDirectory)/infrastructure/eks-terraform'
-    environmentServiceNameAWS: 'aws-for-terraform'
+# - task: TerraformTaskV1@0
+#   inputs:
+#     provider: 'aws'
+#     command: 'apply'
+#     workingDirectory: '$(System.DefaultWorkingDirectory)/infrastructure/eks-terraform'
+#     environmentServiceNameAWS: 'aws-for-terraform'
+# - task: TerraformTaskV1@0
+#   inputs:
+#     provider: 'aws'
+#     command: 'destroy'
+#     workingDirectory: '$(System.DefaultWorkingDirectory)/infrastructure/eks-terraform'
+#     environmentServiceNameAWS: 'aws-for-terraform'
