@@ -33,7 +33,7 @@ module "congdang-cluster" {
   source          = "terraform-aws-modules/eks/aws"
   cluster_name    = "congdang-cluster"
   cluster_version = "1.17"
-  subnets         = ["subnet-3f7b2563", "subnet-4a7d6a45", "subnet-ab24e9f7"] #CHANGE # Donot choose subnet from us-east-1e
+  subnets         = ["subnet-2afc2062", "subnet-4c4ee22a"] #CHANGE # Donot choose subnet from us-east-1e
   #subnets = data.aws_subnet_ids.subnets.ids
   vpc_id          = aws_default_vpc.default.id
   #vpc_id         = "vpc-1234556abcdef"
